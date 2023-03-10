@@ -17,5 +17,9 @@ export default class Character { // eslint-disable-line no-unused-vars
     } else {
       throw new Error('Потрачено!');
     }
+  };
+
+  damage(points) {
+    this.health -= points * (1 - this.defence / 100);
   }
 }
