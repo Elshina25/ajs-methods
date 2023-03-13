@@ -29,3 +29,9 @@ test('check type error of personage', () => {
     const bowman = new Bowman('Alex', 'Zombie'); // eslint-disable-line no-unused-vars
   }).toThrowError('Неверный тип игрока!');
 });
+
+test('level up', () => {
+  const bowman = new Bowman('pers', 'Bowman');
+  const bowmanLevelUp = bowman.levelUp();
+  expect(bowmanLevelUp.level).toEqual(2)
+})
