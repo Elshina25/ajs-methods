@@ -33,5 +33,27 @@ test('check type error of personage', () => {
 test('level up', () => {
   const bowman = new Bowman('pers', 'Bowman');
   const bowmanLevelUp = bowman.levelUp();
-  expect(bowmanLevelUp.level).toEqual(2)
-})
+  expect(bowmanLevelUp.level).toEqual(2);
+});
+
+test('health in levelUp()', () => {
+  expect(() => {
+    const bowman = new Bowman('pers', 'Bowman');
+    bowman.health = 0;
+    bowman.levelUp();
+  }).toThrowError('Потрачено!');
+});
+
+test('damage points', () => {
+  const bowman = new Bowman('pers', 'Bowman');
+  const bowmanHealth = bowman.damage(80); // eslint-disable-line no-unused-vars
+  expect(bowman.health).toEqual(40);
+});
+
+test('health in damage()', () => {
+  expect(() => {
+    const bowman = new Bowman('pers', 'Bowman');
+    bowman.health = 0;
+    bowman.damage(20);
+  }).toThrowError('Потрачено!');
+});
