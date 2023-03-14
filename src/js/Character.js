@@ -1,4 +1,4 @@
-export default class Character { // eslint-disable-line no-unused-vars
+export default class Character {
   constructor(name, type, health, level, attack, defence) {
     this.name = name;
     this.type = type;

@@ -1,7 +1,7 @@
 import Character from './Character';
 
-export default class Daemon extends Character { // eslint-disable-line no-unused-vars
-  constructor(name, type, health, level, attack, defence) {
+export default class Daemon extends Character {
+  constructor(name, type = 'Daemon', health = 100, level = 1, attack = 10, defence = 40) {
     if (name.length < 2) {
       throw new Error('Имя не должно быть короче 2 символов!');
     } if (name.length > 10) {
