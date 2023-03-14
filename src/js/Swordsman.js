@@ -1,7 +1,7 @@
 import Character from './Character';
 
 export default class Swordsman extends Character { // eslint-disable-line no-unused-vars
-  constructor(name, type) {
+  constructor(name, type, health, level, attack, defence) {
     if (name.length < 2) {
       throw new Error('Имя не должно быть короче 2 символов!');
     } if (name.length > 10) {
@@ -9,10 +9,6 @@ export default class Swordsman extends Character { // eslint-disable-line no-unu
     } if (type !== 'Swordsman') {
       throw new Error('Неверный тип игрока!');
     }
-    super(name, type);
-    this.health = 100;
-    this.level = 1;
-    this.attack = 40;
-    this.defence = 10;
+    super(name, type, health, level, attack, defence);
   }
 }
